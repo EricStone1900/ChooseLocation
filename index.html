@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Location - 选择收货地址</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Choose Location</h1>
+            <p>选择收货地址 - Location Selector Demo</p>
+        </header>
+
+        <main>
+            <div class="location-display">
+                <h2>Selected Location:</h2>
+                <div id="selectedLocation" class="selected-location">
+                    Please select a location
+                </div>
+                <button id="openSelector" class="open-btn">Choose Location</button>
+            </div>
+
+            <div class="demo-info">
+                <h3>Features:</h3>
+                <ul>
+                    <li>Three-level location selection (Province → City → District)</li>
+                    <li>Dynamic loading of sub-locations</li>
+                    <li>Responsive design</li>
+                    <li>Smooth animations</li>
+                    <li>Mobile-friendly interface</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- Location Selector Modal -->
+        <div id="locationModal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Select Location</h3>
+                    <button id="closeModal" class="close-btn">&times;</button>
+                </div>
+                
+                <div class="breadcrumb">
+                    <button id="provinceBtn" class="breadcrumb-btn active">Province</button>
+                    <button id="cityBtn" class="breadcrumb-btn" style="display: none;">City</button>
+                    <button id="districtBtn" class="breadcrumb-btn" style="display: none;">District</button>
+                </div>
+
+                <div class="location-lists">
+                    <div id="provinceList" class="location-list active">
+                        <div class="loading">Loading provinces...</div>
+                    </div>
+                    <div id="cityList" class="location-list">
+                        <div class="loading">Loading cities...</div>
+                    </div>
+                    <div id="districtList" class="location-list">
+                        <div class="loading">Loading districts...</div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button id="confirmBtn" class="confirm-btn" disabled>Confirm Selection</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
